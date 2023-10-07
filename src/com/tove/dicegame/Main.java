@@ -7,11 +7,13 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
 
-
-        // Instantiate a scanner
+        // Instantiate a scanner and Random
         Scanner scan = new Scanner(System.in);
         Random rand = new Random();
 
+        // Variables
+        int numberOfPlayers = 0;
+        int highestScore = 0;
 
         System.out.println("Input how many dices you want");
         int numberOfDices = scan.nextInt();
@@ -19,8 +21,8 @@ public class Main {
         System.out.println("How many turns would you like to play?");
         int numberOfTurns = scan.nextInt();
 
-        int numberOfPlayers = 0;
 
+        // A do while loop to make sure the player can't choose less than 2 players
         do {
             System.out.println("How many players? It has to be at least 2");
             numberOfPlayers = scan.nextInt();
@@ -62,6 +64,7 @@ public class Main {
 
                 }
 
+                // Used to make a new row after the throw to make sure the sum is printed on a new row
                 System.out.println();
 
                 players[j].points += totalSum;
@@ -72,7 +75,7 @@ public class Main {
         }
 
         Player winner = new Player("dummy user");
-        int highestScore = 0;
+
 
         for (int i = 0; i < players.length; i++) {
             if (players[i].points > highestScore) {
@@ -80,7 +83,7 @@ public class Main {
                 winner = players[i];
             }
         }
-        System.out.println("The winner is " + winner.username);
+        System.out.println("The winner is " + winner.username + " with " + winner.points + " points in total");
     }
 
 }
