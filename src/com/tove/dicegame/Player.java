@@ -1,5 +1,6 @@
 package com.tove.dicegame;
 
+
 public class Player {
 
     public String username;
