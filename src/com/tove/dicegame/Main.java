@@ -48,18 +48,7 @@ public class Main {
 
                 System.out.print(players[j].username + " is throwing the dice: ");
 
-                for (int i = 0; i < numberOfDices; i++) {
-
-                    // Dice
-                    int die = rand.nextInt(1, 7);
-
-                    totalSum += die;
-
-                    System.out.print(die + " ");
-
-                    TimeUnit.SECONDS.sleep(1);
-
-                }
+                players[j].throwDices(numberOfDices);
 
                 System.out.println();
 
